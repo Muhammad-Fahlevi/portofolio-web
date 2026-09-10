@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <base href="../" />
+  <title>Muhammad Fahlevi — Portfolio (Standard Scroll Mode)</title>
+  <meta name="description"
+    content="Portfolio Muhammad Fahlevi — Frontend Developer & Mahasiswa D3 Teknik Informatika Politeknik Negeri Banjarmasin." />
+  <meta name="author" content="Muhammad Fahlevi" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css?v=20260907" />
+
+  <style>
+    /* Standalone Scroll Page Styling & Overrides */
+    html,
+    body {
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      height: auto !important;
+      position: static !important;
+      background: var(--bg);
+      color: var(--text-primary);
+    }
+
+    #scroll-page {
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    /* Fixed Top Header */
+    .scroll-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      background: rgba(10, 10, 10, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .scroll-nav-btn {
+      font-family: "Geist", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+      background: var(--surface-high);
+      border: 1px solid var(--border-light);
+      padding: 8px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .scroll-nav-btn,
+    .scroll-indicator-up {
+      display: none !important;
+    }
+
+    .scroll-nav-btn:hover {
+      background: var(--primary);
+      color: #0a0a0a;
+      border-color: var(--primary);
+    }
+
+    /* Section Base Wrapper */
+    .scroll-sec {
+      position: relative;
+      width: 100%;
+      min-height: 85vh;
+      padding: 110px 32px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+    }
+
+    .scroll-sec-inner {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    /* Section Backgrounds (Identical to Story Mode) */
+    #sec-intro {
+      background-image:
+        linear-gradient(135deg, rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.7)),
+        url("hero-bg.png") !important;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    #sec-about {
+      background-image:
+        linear-gradient(rgba(10, 10, 10, 0.76), rgba(10, 10, 10, 0.86)),
+        url("src/coklat.png") !important;
+    }
+
+    #sec-gallery {
+      background-image:
+        linear-gradient(rgba(10, 10, 10, 0.84), rgba(10, 10, 10, 0.9)),
+        url("src/putih.png") !important;
+    }
+
+    #sec-skills {
+      background-image:
+        linear-gradient(rgba(10, 10, 10, 0.76), rgba(10, 10, 10, 0.86)),
+        url("src/coklat.png") !important;
+    }
+
+    #sec-project {
+      background-image:
+        linear-gradient(rgba(10, 10, 10, 0.84), rgba(10, 10, 10, 0.9)),
+        url("src/putih.png") !important;
+    }
+
+    #sec-experience {
+      background-image:
+        linear-gradient(rgba(10, 10, 10, 0.76), rgba(10, 10, 10, 0.86)),
+        url("src/coklat.png") !important;
+    }
+
+    #sec-stats {
+      background-image:
+        linear-gradient(rgba(10, 10, 10, 0.84), rgba(10, 10, 10, 0.9)),
+        url("src/putih.png") !important;
+    }
+
+    #sec-outro {
+      background-image:
+        linear-gradient(rgba(10, 10, 10, 0.76), rgba(10, 10, 10, 0.86)),
+        url("src/coklat.png") !important;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page-transition-overlay"></div>
+  <div id="scroll-page">
+    <!-- ── FIXED HEADER ── -->
+    <header class="scroll-header">
+      <div class="logo">FAHLEVI<span>.</span></div>
+      <a href="index.html" class="scroll-nav-btn"> Kembali Ke Story </a>
+    </header>
+    <!-- ── 1. INTRO ── -->
+    <section class="scroll-sec" id="sec-intro">
+      <div class="scroll-sec-inner" style="display: flex; flex-direction: column; align-items: center">
+        <!-- Animated Scroll Up Indicator to Return to Story Mode -->
+        <a href="index.html?slide=7" class="scroll-indicator-up" style="margin-bottom: 36px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+          </svg>
+          <span>Scroll Ke Atas Untuk Mode Story</span>
+        </a>
+
+        <div class="intro-eyebrow">Muhammad Fahlevi</div>
+        <h1 class="intro-title">
+          Hello.<br />
+          I'm <span class="highlight">Fahlevi.</span>
+        </h1>
+
+        <div class="intro-tags">
+          <span class="tag-pill">Frontend</span>
+          <span class="tag-pill">Laravel</span>
+          <span class="tag-pill">Web Development</span>
+          <span class="tag-pill">Software Engineer</span>
+          <span class="tag-pill">Banjarmasin</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 2. TENTANG SAYA ── -->
+    <section class="scroll-sec" id="sec-about">
+      <div class="scroll-sec-inner">
+        <div class="about-layout">
+          <div class="about-content">
+            <div class="section-label" style="color: var(--accent-purple); margin-bottom: 16px">
+              <span>Tentang Saya</span>
+            </div>
+            <h2 class="about-title">
+              Belajar, Berkembang, dan <br />
+              Membangun Solusi Melalui <br />
+              Setiap Proyek.
+            </h2>
+            <p class="about-body">
+              Seorang Fresh Graduated D3 Teknik Informatika yang memiliki
+              ketertarikan dalam pengembangan perangkat lunak dan aplikasi
+              berbasis web serta design uiux. Saya menikmati proses mengubah ide menjadi solusi
+              yang fungsional, mudah digunakan, dan memberikan pengalaman
+              pengguna yang baik. Melalui setiap proyek, saya terus belajar,
+              beradaptasi dengan teknologi baru, dan mengembangkan kemampuan
+              untuk membangun aplikasi yang bermanfaat.
+            </p>
+            <div class="about-meta">
+              <div class="meta-item">
+                <span class="meta-label">Nama</span>
+                <span class="meta-value">Muhammad Fahlevi</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Domisili</span>
+                <span class="meta-value">Banjarmasin, Kalimantan Selatan</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Pendidikan</span>
+                <span class="meta-value">D3 Teknik Informatika<br />Politeknik Negeri
+                  Banjarmasin</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Fokus</span>
+                <span class="meta-value"><strong>Web Development, UI/UX Designer</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-photo-wrap">
+            <div class="about-photo-frame">
+              <img src="src/saya.jpeg" alt="Foto Muhammad Fahlevi" class="about-photo" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3. PROJECT & AKTIVITAS ── -->
+    <section class="scroll-sec" id="sec-gallery">
+      <div class="scroll-sec-inner">
+        <div style="text-align: center; margin-bottom: 48px">
+          <div class="section-label" style="color: var(--accent-teal); margin-bottom: 12px">
+            <span>Portofolio &amp; Pengalaman</span>
+          </div>
+          <h2 style="
+                font-family: &quot;Geist&quot;, sans-serif;
+                font-size: clamp(32px, 5vw, 56px);
+                font-weight: 700;
+                letter-spacing: -0.03em;
+              ">
+            Project &amp; <span style="color: var(--primary)">Aktivitas</span>
+          </h2>
+        </div>
+
+        <!-- Project Web Grid -->
+        <div style="margin-bottom: 56px">
+          <h3 style="
+                font-family: &quot;Geist&quot;, sans-serif;
+                font-size: 18px;
+                font-weight: 600;
+                color: var(--accent-teal);
+                margin-bottom: 20px;
+              ">
+            Project Web
+          </h3>
+          <div style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 20px;
+              ">
+            <div class="pgallery-item">
+              <img src="src/TA/1.png" alt="Dashboard monitoring rental mobil"
+                style="width: 100%; height: 180px; object-fit: cover" loading="lazy" />
+              <div class="pgallery-caption">
+                <span class="pgallery-title">Rental Mobil Dashboard Monitoring</span>
+                <span class="pgallery-tech">TA · Full Stack · 2026</span>
+              </div>
+            </div>
+            <div class="pgallery-item">
+              <img src="src/Rental/Screenshot 2025-10-07 153039.png" alt="Sistem Manajemen Rental Mobil"
+                style="width: 100%; height: 180px; object-fit: cover" loading="lazy" />
+              <div class="pgallery-caption">
+                <span class="pgallery-title">Sistem Manajemen Rental Mobil</span>
+                <span class="pgallery-tech">Internship · Frontend · 2025</span>
+              </div>
+            </div>
+            <div class="pgallery-item">
+              <img src="src/Bimble/Screenshot 2025-10-16 160541.png" alt="Sistem Informasi Bimbingan Belajar"
+                style="width: 100%; height: 180px; object-fit: cover" loading="lazy" />
+              <div class="pgallery-caption">
+                <span class="pgallery-title">Sistem Informasi Bimbingan Belajar</span>
+                <span class="pgallery-tech">Internship · Frontend · 2025</span>
+              </div>
+            </div>
+            <div class="pgallery-item">
+              <img src="src/PBL/Simpadu.png" alt="Sistem Informasi Terpadu SIMPADU"
+                style="width: 100%; height: 180px; object-fit: cover" loading="lazy" />
+              <div class="pgallery-caption">
+                <span class="pgallery-title">Sistem Informasi Terpadu (SIMPADU)</span>
+                <span class="pgallery-tech">PBL · Frontend · 2025</span>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center; margin-top: 28px">
+            <a href="projects/index.html" class="btn-primary">
+              Lihat Semua Detail Portfolio
+              <span aria-hidden="true">&#8599;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Organization Activities -->
+        <div>
+          <h3 style="
+                font-family: &quot;Geist&quot;, sans-serif;
+                font-size: 18px;
+                font-weight: 600;
+                color: var(--accent-amber);
+                margin-bottom: 20px;
+              ">
+            Aktivitas Organisasi
+          </h3>
+          <div style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 24px;
+              ">
+            <div class="agallery-item">
+              <img src="src/aktifitas 1.jpg" alt="Aktivitas Lapangan LPM Lensa"
+                style="width: 100%; height: 220px; object-fit: cover" loading="lazy" />
+              <div class="agallery-caption" style="padding: 14px; font-size: 13px">
+                <strong>LPM Lensa Poliban</strong> · Unit Kegiatan Mahasiswa
+              </div>
+            </div>
+            <div class="agallery-item">
+              <img src="src/lensa-2.jpg" alt="Pimpinan Redaksi LPM Lensa"
+                style="width: 100%; height: 220px; object-fit: cover" loading="lazy" />
+              <div class="agallery-caption" style="padding: 14px; font-size: 13px">
+                <strong>Pimpinan Redaksi</strong> · Kepemimpinan &amp;
+                Organisasi Unit Poliban
+              </div>
+            </div>
+            <div class="agallery-item">
+              <img src="src/aktifitas 3.jpeg" alt="Aksi Kemanusiaan LPM Lensa"
+                style="width: 100%; height: 220px; object-fit: cover" loading="lazy" />
+              <div class="agallery-caption" style="padding: 14px; font-size: 13px">
+                <strong>Liputan Media</strong> · News &amp;
+                LPM Lensa
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 4. KEAHLIAN ── -->
+    <section class="scroll-sec" id="sec-skills">
+      <div class="scroll-sec-inner" style="display: flex; flex-direction: column; align-items: center">
+        <div class="section-label" style="color: var(--primary); margin-bottom: 24px">
+          <span>Keahlian</span>
+        </div>
+
+        <div class="skills-grid" style="width: 100%; max-width: 820px">
+          <div class="skill-card">
+            <span class="skill-card-icon">⚡</span>
+            <div class="skill-card-title">Frontend</div>
+            <div class="skill-badges">
+              <span class="skill-badge">HTML</span>
+              <span class="skill-badge">CSS</span>
+              <span class="skill-badge">Tailwind CSS</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">Laravel Blade</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-card-icon">🛠</span>
+            <div class="skill-card-title">Backend</div>
+            <div class="skill-badges">
+              <span class="skill-badge">PHP</span>
+              <span class="skill-badge">Laravel</span>
+              <span class="skill-badge">MySQL</span>
+              <span class="skill-badge">REST API</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-card-icon">🔧</span>
+            <div class="skill-card-title">Tools</div>
+            <div class="skill-badges">
+              <span class="skill-badge">Git</span>
+              <span class="skill-badge">GitHub</span>
+              <span class="skill-badge">VS Code</span>
+              <span class="skill-badge">Figma</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <span class="skill-card-icon">🌟</span>
+            <div class="skill-card-title">Soft Skills</div>
+            <div class="skill-badges">
+              <span class="skill-badge">Leadership</span>
+              <span class="skill-badge">Teamwork</span>
+              <span class="skill-badge">Communication</span>
+              <span class="skill-badge">Problem Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 5. PROYEK UTAMA (RENTAL MOBIL & STACKED SHOWCASE) ── -->
+    <section class="scroll-sec" id="sec-project">
+      <div class="scroll-sec-inner">
+        <div class="project-wrapper">
+          <!-- Info Column -->
+          <div class="project-left">
+            <div class="project-label" style="margin-bottom: 16px">
+              Proyek Unggulan · Tugas Akhir
+            </div>
+            <h2 class="project-title" style="margin-bottom: 20px">
+              Sistem Informasi<br />Rental Mobil
+            </h2>
+            <p class="project-desc" style="margin-bottom: 28px">
+              Aplikasi web lengkap untuk manajemen bisnis rental kendaraan,
+              dilengkapi dashboard monitoring real-time dan sistem booking
+              online.
+            </p>
+            <div class="project-feature-grid" style="margin-bottom: 28px">
+              <div class="project-feature">Dashboard Monitoring</div>
+              <div class="project-feature">Booking Online</div>
+              <div class="project-feature">Manajemen Member</div>
+              <div class="project-feature">Tracking Kendaraan</div>
+            </div>
+            <div class="project-stack">
+              <span class="stack-badge">Laravel</span>
+              <span class="stack-badge">Tailwind CSS</span>
+              <span class="stack-badge">MySQL</span>
+              <span class="stack-badge">Blade Template</span>
+            </div>
+          </div>
+
+          <!-- 3-Card Stack Showcase (1.png, 2.png, 3.png) -->
+          <div class="project-right">
+            <div class="project-stack-container">
+              <div class="pstack-card pstack-1">
+                <img src="src/TA/1.png" alt="Dashboard Live Monitoring" loading="lazy" />
+              </div>
+
+              <div class="pstack-card pstack-2">
+                <img src="src/TA/2.png" alt="Manajemen Armada" loading="lazy" />
+              </div>
+
+              <div class="pstack-card pstack-3">
+                <img src="src/TA/3.png" alt="Landing Page Customer" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. PENGALAMAN ── -->
+    <section class="scroll-sec" id="sec-experience">
+      <div class="scroll-sec-inner">
+        <div class="section-label" style="color: var(--accent-amber); margin-bottom: 32px">
+          <span>Pengalaman</span>
+        </div>
+
+        <div class="exp-layout">
+          <!-- Left Column: Timeline List -->
+          <div class="exp-left">
+            <div class="exp-list">
+              <article class="exp-item" style="margin-bottom: 32px">
+                <div class="exp-header">
+                  <div>
+                    <h3 class="exp-title">UI/UX Designer Intern</h3>
+                    <div class="exp-org">Neumedira Indonesia</div>
+                  </div>
+                  <div class="exp-period">2025</div>
+                </div>
+                <div class="exp-tags">
+                  <span class="exp-tag">Dashboard Administration</span>
+                  <span class="exp-tag">Laravel Blade</span>
+                  <span class="exp-tag">Tailwind CSS</span>
+                  <span class="exp-tag">Responsive Design</span>
+                  <span class="exp-tag">Git &amp; GitHub</span>
+                </div>
+              </article>
+
+              <article class="exp-item" style="margin-bottom: 32px">
+                <div class="exp-header">
+                  <div>
+                    <h3 class="exp-title">Pimpinan Redaksi</h3>
+                    <div class="exp-org">
+                      Lembaga Pers Mahasiswa Lensa Politeknik Negeri Banjarmasin
+                    </div>
+                  </div>
+                  <div class="exp-period">2025/2026</div>
+                </div>
+                <div class="exp-tags">
+                  <span class="exp-tag">Memimpin Organisasi</span>
+                  <span class="exp-tag">Koordinasi Divisi</span>
+                  <span class="exp-tag">Pengambilan Keputusan</span>
+                  <span class="exp-tag">Leadership</span>
+                </div>
+              </article>
+
+              <article class="exp-item">
+                <div class="exp-header">
+                  <div>
+                    <h3 class="exp-title">Mahasiswa D3 Teknik Informatika</h3>
+                    <div class="exp-org">Politeknik Negeri Banjarmasin</div>
+                  </div>
+                  <div class="exp-period">2023 — 2026</div>
+                </div>
+                <div class="exp-tags">
+                  <span class="exp-tag">Web Development</span>
+                  <span class="exp-tag">Proyek Perkuliahan</span>
+                  <span class="exp-tag">Tugas Akhir</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Right Column: 3D Spotlight Photo Showcase -->
+          <div class="exp-right">
+            <div class="exp-deck-container">
+              <!-- Photo 1: Magang -->
+              <div class="exp-deck-card exp-card-1" data-full="src/magang.jpeg"
+                data-caption="Magang Neumedira Indonesia — Frontend Developer Intern"
+                title="Klik untuk memperbesar foto">
+                <img src="src/magang.jpeg" alt="Magang Neumedira Indonesia" class="exp-card-img" />
+                <div class="exp-badge-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                  <span>Magang</span>
+                </div>
+                <div class="exp-card-overlay">
+                  <span class="exp-card-title">Neumedira Indonesia</span>
+                  <span class="exp-card-sub">UI/UX Designer Intern</span>
+                </div>
+              </div>
+
+              <!-- Photo 2: LPM Lensa -->
+              <div class="exp-deck-card exp-card-2" data-full="src/lensa-1.jpg"
+                data-caption="LPM Lensa — Pimpinan Redaksi Organisasi" title="Klik untuk memperbesar foto">
+                <img src="src/lensa-1.jpg" alt="Pimpinan Redaksi LPM Lensa" class="exp-card-img" />
+                <div class="exp-badge-pill badge-amber">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                  <span>Organisasi</span>
+                </div>
+                <div class="exp-card-overlay">
+                  <span class="exp-card-title">Lembaga PM Lensa Poliban</span>
+                  <span class="exp-card-sub">Pimpinan Redaksi</span>
+                </div>
+              </div>
+
+              <!-- Photo 3: Kuliah -->
+              <div class="exp-deck-card exp-card-3" data-full="src/kuliah.jpg"
+                data-caption="Politeknik Negeri Banjarmasin — Mahasiswa D3 Teknik Informatika"
+                title="Klik untuk memperbesar foto">
+                <img src="src/kuliah.jpg" alt="Mahasiswa D3 Teknik Informatika" class="exp-card-img" />
+                <div class="exp-badge-pill badge-teal">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                  </svg>
+                  <span>Studi</span>
+                </div>
+                <div class="exp-card-overlay">
+                  <span class="exp-card-title">Politeknik Negeri Banjarmasin</span>
+                  <span class="exp-card-sub">D3 Teknik Informatika</span>
+                </div>
+              </div>
+
+              <!-- Mobile Marquee Duplicates -->
+              <div class="exp-deck-card mobile-duplicate" data-full="src/magang.jpeg"
+                data-caption="Magang Neumedira Indonesia — Frontend Developer Intern">
+                <img src="src/magang.jpeg" alt="Magang Neumedira Indonesia" class="exp-card-img" />
+                <div class="exp-badge-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                  <span>Magang</span>
+                </div>
+                <div class="exp-card-overlay">
+                  <span class="exp-card-title">Neumedira Indonesia</span>
+                  <span class="exp-card-sub">UI/UX Designer Intern</span>
+                </div>
+              </div>
+
+              <div class="exp-deck-card mobile-duplicate" data-full="src/lensa-1.jpg"
+                data-caption="LPM Lensa — Pimpinan Redaksi Organisasi">
+                <img src="src/lensa-1.jpg" alt="Pimpinan Redaksi LPM Lensa" class="exp-card-img" />
+                <div class="exp-badge-pill badge-amber">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                  <span>Organisasi</span>
+                </div>
+                <div class="exp-card-overlay">
+                  <span class="exp-card-title">Lembaga PM Lensa Poliban</span>
+                  <span class="exp-card-sub">Pimpinan Redaksi</span>
+                </div>
+              </div>
+
+              <div class="exp-deck-card mobile-duplicate" data-full="src/kuliah.jpg"
+                data-caption="Politeknik Negeri Banjarmasin — Mahasiswa D3 Teknik Informatika">
+                <img src="src/kuliah.jpg" alt="Mahasiswa D3 Teknik Informatika" class="exp-card-img" />
+                <div class="exp-badge-pill badge-teal">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                  </svg>
+                  <span>Studi</span>
+                </div>
+                <div class="exp-card-overlay">
+                  <span class="exp-card-title">Politeknik Negeri Banjarmasin</span>
+                  <span class="exp-card-sub">D3 Teknik Informatika</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 7. PENCAIPAIAN (STATS) ── -->
+    <section class="scroll-sec" id="sec-stats">
+      <div class="scroll-sec-inner" style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 48px;
+          ">
+        <div class="section-label" style="color: var(--primary); text-align: center">
+          <span>Perjalanan dalam Angka</span>
+        </div>
+
+        <div class="stats-grid" style="width: 100%; max-width: 700px">
+          <div class="stat-item">
+            <div class="stat-number">
+              <span class="stat-val">3</span><span class="stat-suffix">+</span>
+            </div>
+            <div class="stat-label">Tahun Belajar</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number"><span class="stat-val">1</span></div>
+            <div class="stat-label">Internship</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">
+              <span class="stat-val">9</span><span class="stat-suffix">+</span>
+            </div>
+            <div class="stat-label">Teknologi Dikuasai</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number"><span class="stat-val">1</span></div>
+            <div class="stat-label">Proyek Tugas Akhir</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number"><span class="stat-val">1</span></div>
+            <div class="stat-label">Jabatan Pimpinan Redaksi</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number"><span class="stat-val">2026</span></div>
+            <div class="stat-label">Tahun Lulus</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 8. OUTRO / KONTAK ── -->
+    <section class="scroll-sec" id="sec-outro">
+      <div class="scroll-sec-inner" style="display: flex; flex-direction: column; align-items: center">
+        <h2 class="outro-title">
+          Let's build<br /><span class="highlight">together.</span>
+        </h2>
+
+        <p class="outro-sub" style="margin-bottom: 36px">
+          Punya proyek menarik? Saya siap berkolaborasi dan membantu
+          mewujudkan ide kamu.
+        </p>
+
+        <div class="outro-actions" style="
+              margin-bottom: 48px;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 12px;
+            ">
+          <a href="https://wa.me/6283866272066" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 23.882a.5.5 0 0 0 .61.61l6.058-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.844 0-3.573-.485-5.073-1.334l-.363-.214-3.761.91.926-3.66-.233-.376A9.945 9.945 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+            </svg>
+            Hubungi Saya
+          </a>
+          <a href="mailto:muhammadfahevil7@gmail.com" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            Email
+          </a>
+          <a href="https://www.instagram.com/fh.lvi?stkn=MXVubmt4Z25yZW0xMA%3D%3D&utm_source=qr" target="_blank"
+            rel="noopener noreferrer" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+            </svg>
+            Instagram
+          </a>
+        </div>
+
+        <div class="outro-socials">
+          <span class="social-link" style="
+                pointer-events: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+              ">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Banjarmasin, Kalimantan Selatan
+          </span>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- #scroll-page -->
+
+  <script>
+    const overlay = document.getElementById("page-transition-overlay");
+
+    function navigateWithTransition(url) {
+      window.location.assign(url);
+    }
+
+    if (overlay) {
+      setTimeout(() => {
+        overlay.classList.add("fade-out");
+      }, 60);
+    }
+
+    document.querySelectorAll('a[href^="index.html"]').forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        navigateWithTransition(link.getAttribute("href"));
+      });
+    });
+
+    let isAtTop = true;
+    window.addEventListener(
+      "scroll",
+      () => {
+        isAtTop = window.scrollY <= 15;
+      },
+      { passive: true },
+    );
+
+    // Lightbox Modal for Scroll Mode Photos
+    const lightbox = document.getElementById("photo-lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCap = document.getElementById("lightbox-caption");
+    const lightboxClose = document.getElementById("lightbox-close");
+
+    document
+      .querySelectorAll(
+        ".exp-deck-card, .pstack-card, .pgallery-item img, .agallery-item img",
+      )
+      .forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const source = item.matches("img")
+            ? item
+            : item.querySelector("img");
+          const fullSrc =
+            item.getAttribute("data-full") || source?.getAttribute("src");
+          const capText =
+            item.getAttribute("data-caption") || source?.getAttribute("alt");
+          if (!fullSrc || !lightbox || !lightboxImg) return;
+          lightboxImg.src = fullSrc;
+          if (lightboxCap) lightboxCap.textContent = capText || "";
+          lightbox.classList.add("active");
+        });
+      });
+
+    function closeLightbox() {
+      if (lightbox) lightbox.classList.remove("active");
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+    if (lightbox) {
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+    }
+  </script>
+
+  <!-- ── LIGHTBOX MODAL FOR PHOTO ZOOM ── -->
+  <div id="photo-lightbox" class="photo-lightbox" aria-hidden="true">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Tutup">
+        &times;
+      </button>
+      <img id="lightbox-img" src="" alt="Photo Full View" />
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+  </div>
+</body>
+
+</html>
