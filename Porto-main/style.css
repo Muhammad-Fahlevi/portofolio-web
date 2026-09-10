@@ -1,5 +1,5 @@
 /* ================================================
-   SAHAL PORTFOLIO — PREMIUM DESIGN SYSTEM
+   FAHLEVI PORTFOLIO — PREMIUM DESIGN SYSTEM
    Story-Driven Experience | Dark Minimalist
    ================================================ */
 
@@ -2378,10 +2378,10 @@ body[data-slide="7"] {
 } /* Project 4: Web Perkenalan */
 .slide.active .seq-step-6 {
   animation-delay: 5.2s;
-} /* Activity 1: KSR PMI 1 */
+} /* Activity 1: LPM Lensa 1 */
 .slide.active .seq-step-7 {
   animation-delay: 6.3s;
-} /* Activity 2: KSR PMI 2 */
+} /* Activity 2: LPM Lensa 2 */
 
 /* ── ALTERNATING BACKGROUNDS (PAGE 2 ONWARD) ── */
 /* Slide 2 (idx 1): Coklat */
@@ -3343,3 +3343,4 @@ body.mode-scroll .btn-scroll-toggle {
     transform: translateX(calc(-50% - 8px));
   }
 }
+

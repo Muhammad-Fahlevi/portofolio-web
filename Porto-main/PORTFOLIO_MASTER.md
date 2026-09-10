@@ -1,12 +1,12 @@
 # PORTFOLIO_MASTER.md
 
-# Portofolio Muhamad Sahal Ansar
+# Portofolio Muhammad Fahlevi
 
 Versi: 1.0
 
 ## Tentang Dokumen
 
-Dokumen ini menjadi pedoman utama dalam membangun website portofolio Muhamad Sahal Ansar.
+Dokumen ini menjadi pedoman utama dalam membangun website portofolio Muhammad Fahlevi.
 
 Website ini **bukan website portofolio biasa**. Website harus memberikan pengalaman seperti **Spotify Wrapped** atau **Instagram Stories**, di mana setiap layar adalah satu cerita.
 
@@ -27,7 +27,7 @@ Website ini **bukan website portofolio biasa**. Website harus memberikan pengala
 
 ## Tentang Saya
 
-**Nama:** Muhamad Sahal Ansar
+**Nama:** Muhammad Fahlevi
 
 **Domisili:** Banjarmasin, Kalimantan Selatan
 
@@ -56,7 +56,7 @@ Saya adalah mahasiswa D3 Teknik Informatika yang memiliki ketertarikan pada peng
 
 ### 2025
 - Magang Frontend Developer di Neumedira Indonesia.
-- Ketua Umum KSR PMI Unit Poliban.
+- Pimpinan Redaksi LPM Lensa.
 - Mengembangkan Tugas Akhir Sistem Informasi Rental Mobil dengan Dashboard Monitoring.
 
 ## Keahlian
@@ -97,8 +97,8 @@ Frontend Developer Intern
 - Responsive Design
 - Git & GitHub
 
-### KSR PMI Unit Poliban
-Ketua Umum
+### LPM Lensa
+Pimpinan Redaksi
 - Memimpin organisasi
 - Koordinasi divisi
 - Pengambilan keputusan
@@ -155,4 +155,6 @@ Ketua Umum
 
 Pengunjung harus merasa:
 
-> "Saya tidak hanya melihat portofolio Sahal, tetapi ikut merasakan perjalanan dan prosesnya."
+> "Saya tidak hanya melihat portofolio Fahlevi, tetapi ikut merasakan perjalanan dan prosesnya."
+
+
